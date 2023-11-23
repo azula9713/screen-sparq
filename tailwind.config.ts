@@ -17,6 +17,11 @@ const config: Config = {
         secondary: '#BB84E8',
         accent: '#BB84E8',
       },
+      // add a custom xs breakpoint
+      screens: {
+        xxs: '100px',
+        xs: '320px',
+      },
     },
   },
   darkMode: 'class',
