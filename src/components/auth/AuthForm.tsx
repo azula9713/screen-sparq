@@ -3,6 +3,7 @@
 import { signIn } from 'next-auth/react'
 import { useRef } from 'react'
 
+import Button from '../common/Button'
 import TextBox from '../common/TextBox'
 
 type Props = {
@@ -41,20 +42,8 @@ export default function AuthForm({ type }: Readonly<Props>) {
         </button>
 
         {/* add google and github sign in methods from next auth */}
-        <button
-          className='bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded mt-4 w-full'
-          type='button'
-          onClick={handleGoogleSignIn}
-        >
-          Sign In with Google
-        </button>
-        <button
-          className='bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded mt-4 w-full'
-          type='button'
-          onClick={handleGithubSignIn}
-        >
-          Sign In with Github
-        </button>
+        <Button label='Sign In with Google' action={handleGoogleSignIn} />
+        <Button label='Sign In with Github' action={handleGithubSignIn} />
       </form>
       {type === 'signin' ? (
         <div className='mt-4'>
