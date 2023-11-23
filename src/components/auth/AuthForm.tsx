@@ -30,7 +30,7 @@ export default function AuthForm({ type }: Readonly<Props>) {
   }
 
   return (
-    <div className='flex flex-col justify-center items-center bg-white dark:bg-gray-800 dark:text-gray-100'>
+    <div className='flex flex-col justify-center items-center bg-white dark:bg-gray-900 dark:text-gray-100'>
       <form className='flex flex-col items-center justify-center mt-4' onSubmit={handleSubmit}>
         <TextBox label='Email' id='email' type='email' reference={emailRef} />
         <TextBox label='Password' id='password' type='password' reference={passwordRef} />
