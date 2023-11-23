@@ -16,6 +16,7 @@ const config: Config = {
         primary: '#A437DB',
         secondary: '#BB84E8',
         accent: '#BB84E8',
+        darkPrimary: '#64009E',
       },
       // add a custom xs breakpoint
       screens: {
