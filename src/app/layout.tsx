@@ -1,11 +1,8 @@
 import type { Metadata } from 'next'
-import { Session, getServerSession } from 'next-auth'
 import { Inter } from 'next/font/google'
 
-import SessionProvider from '@/components/auth/SessionProvider'
-import Header from '@/components/layout/Header'
+import Providers from '@/components/providers'
 import './globals.css'
-import RecoilContextProvider from './recoilContextProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,15 +17,10 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const session = await getServerSession()
-
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body className={inter.className} suppressHydrationWarning={true}>
-        <RecoilContextProvider>
-          <Header session={session as Session} />
-          <SessionProvider session={session}>{children}</SessionProvider>
-        </RecoilContextProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )

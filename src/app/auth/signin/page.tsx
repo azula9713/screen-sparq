@@ -13,7 +13,7 @@ export default async function SignIn() {
   }
 
   return (
-    <div className='flex flex-col justify-center items-center h-full bg-white dark:bg-gray-900 dark:text-gray-100'>
+    <div className='flex flex-col justify-center items-center h-screen bg-white dark:bg-gray-900 dark:text-gray-100'>
       <Image src={pngLogo} alt='logo' className='w-40 md:w-60 lg:w-80 xl:w-96' priority={true} />
       <AuthForm type='signin' />
     </div>

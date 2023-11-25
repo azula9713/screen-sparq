@@ -1,11 +1,10 @@
-import { getServerSession } from 'next-auth'
+import Header from '@/components/layout/Header'
 
 export default async function Home() {
-  const session = await getServerSession()
-
   return (
-    <main className='flex flex-col items-center justify-between p-24'>
-      <div className='flex flex-col items-center justify-center'></div>
+    <main className='flex flex-col items-center justify-between'>
+      <Header />
+      <div>Home</div>
     </main>
   )
 }
