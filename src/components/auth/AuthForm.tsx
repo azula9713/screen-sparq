@@ -3,6 +3,7 @@
 import { signIn } from 'next-auth/react'
 import { useRef } from 'react'
 
+import Button from '../common/Button'
 import TextBox from '../common/TextBox'
 
 type Props = {
@@ -29,7 +30,7 @@ export default function AuthForm({ type }: Readonly<Props>) {
   }
 
   return (
-    <div className='flex flex-col justify-center items-center bg-white dark:bg-gray-800 dark:text-gray-100'>
+    <div className='flex flex-col justify-center items-center bg-white dark:bg-gray-900 dark:text-gray-100'>
       <form className='flex flex-col items-center justify-center mt-4' onSubmit={handleSubmit}>
         <TextBox label='Email' id='email' type='email' reference={emailRef} />
         <TextBox label='Password' id='password' type='password' reference={passwordRef} />
@@ -41,20 +42,8 @@ export default function AuthForm({ type }: Readonly<Props>) {
         </button>
 
         {/* add google and github sign in methods from next auth */}
-        <button
-          className='bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded mt-4 w-full'
-          type='button'
-          onClick={handleGoogleSignIn}
-        >
-          Sign In with Google
-        </button>
-        <button
-          className='bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded mt-4 w-full'
-          type='button'
-          onClick={handleGithubSignIn}
-        >
-          Sign In with Github
-        </button>
+        <Button label='Sign In with Google' action={handleGoogleSignIn} />
+        <Button label='Sign In with Github' action={handleGithubSignIn} />
       </form>
       {type === 'signin' ? (
         <div className='mt-4'>
