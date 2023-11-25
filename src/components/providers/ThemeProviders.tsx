@@ -15,7 +15,7 @@ export default function Theme({ children }: Readonly<Props>) {
   }, [])
 
   if (!mounted) {
-    return <>{children}</>
+    return null
   }
 
   return <ThemeProvider attribute='class'>{children}</ThemeProvider>
